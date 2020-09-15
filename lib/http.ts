@@ -53,7 +53,7 @@ export default class HTTPClient {
   public async post<T>(
     url: string,
     body?: any,
-    config?: Partial<AxiosRequestConfig>,
+    config?: Partial<AxiosRequestConfig> = this.config,
   ): Promise<T> {
     const res = await this.instance.post(url, body, {
       headers: {
@@ -75,7 +75,7 @@ export default class HTTPClient {
   public async put<T>(
     url: string,
     body?: any,
-    config?: Partial<AxiosRequestConfig>,
+    config?: Partial<AxiosRequestConfig> = this.config,
   ): Promise<T> {
     const res = await this.instance.put(url, body, {
       headers: {
